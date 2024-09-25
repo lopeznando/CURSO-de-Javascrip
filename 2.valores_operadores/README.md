@@ -1,6 +1,9 @@
 # Valores, Tipos y Operadores
 ## Indice
 - [tipos de datos o valores](#valores)
+- [datos primitivos](#datos-primitivos)
+- [Numeros(Number)] (#Numeros(Number))
+- [Aritmetica(operaciolnes aritmitico)] (#Aritmetica (operaciolnes aritmitico))
 ## valores
 Imagina unmar de bits.
 Una computadora moderna tiene mas de 100 mil millones de bits almacenados en su `memoria de trabajo`o`memoria principal`o`memoria volatil`o`ram`.
@@ -14,21 +17,55 @@ Ahora la memoria no volatil o memoria secundaria tiene estos bits de manera orde
   son aquellos datos que ya existen, actualizasdos ni eliminados solo pueden ser llamados para el uso que deseamos darle.
   #### - Numeros(Number)
   los valores de tipo numericol, como es de esperar son numeros yne javascript se escribe o se hace el llamado de este valor de la siguiente manera
+  - numero de tipo entero
+  ```js
+  // entreo positivo
+  20
+  // entero negativo
+  -20
+  ```
   ```js
   20 
   //estamos usando un patron de bits para el numero 20 que existiera dentro de la memoria de trabajo
   ```
   - numero de punto flotante decimal fraccion
   ```js
+  // decimal positivo
   2.7
   0.
   .0
+  // decimal negativo
+  -3.6
   ```
   - numeros notacion cientifica
   ```js
   2.998e8
   //^2.998 * 10^8
   ```
+  - numeros especiales
+  en javascript existen tres valores de tipo numero que se consideran un dato primitivo numerico de tipo especial
+   ```js
+   Infinity
+   - Infinity
+   NaN
+   //not a number
+   //no es un numero
+   //cuando el resultado de una operacion es matematicamente imposible
+   ```
+   #### Aritmetica (operaciolnes aritmitico)
+   la principal operacion que se puede hacer con numero es la aritmetica.
+   para esto tenemos los operadores Aritmeticos como:
+   - suma (+)
+   - resta (-)
+   - multiplicacion (*)
+   - divicion (/)
+   - potencia (**)
+   - modulo (%)
+  **podemos agrupar operacion con parentesis () las operacionesque esten entre los parentesis se ejecuta primero**
+  consulta el archivo de operadores
+  [aqui](./operadores.js).
+  ve los ejercicios [aqui](./ejercicios.js)
+
   >[!WARNING]
   cuando javascript realiza operaciones con numeros enteros el resultados siempre sera exacta, cuando realize operaciones con numeros decimales el resulatado perdera precision porque solo tiene 64 bits para almacenar el numero esto suele ocurrir con resultados cuyos decimales sean infinitos como el caso el numero PI **es nuestra responsabilidad como programadores hacer el uso de los decimales con aproximaciones para evitar errores** 
   >[!TIP]
