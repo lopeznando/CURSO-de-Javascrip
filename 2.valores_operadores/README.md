@@ -75,6 +75,8 @@ Ahora la memoria no volatil o memoria secundaria tiene estos bits de manera orde
    - divicion (/)
    - potencia (**)
    - modulo (%)
+   - incremento (++)
+   - decremento(--)
   **podemos agrupar operacion con parentesis () las operacionesque esten entre los parentesis se ejecuta primero**
   consulta el archivo de operadores
   [aqui](./operadores.js).
