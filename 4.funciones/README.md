@@ -1,11 +1,12 @@
 # FUNCIONES
-- [estructura de una funcion](#estructura-de-una-funcion-como-se-crea-una-funcion)
-- [Tipos de Argumentos y Parametros](#tipos-de-argumentos-y-parametros)
-- [Argumentos y Parametros Posicionales](#argumentos-y-parametros-nominales)
-- [Argumentos y Parametros Nominales](#argumentos-y-parametros-nominales)
- las funciones en javascript son `bloques de codigo ejecutable` a los que podemos pasar parametros y operar con ellos.
-Nos sirve para modular (modularizar) nuestro programa y estructurarlos en bloques que `realicen una tarea concreta`, de esta manera nuestro codigo es mas legible y mantenible.
-las funciones normalmente al acabar su ejecucion devuelven un valor, que conseguimos con el parametro `return`.
+- [FUNCIONES](#funciones)
+  - [estructura de una funcion (como se crea una funcion)](#estructura-de-una-funcion-como-se-crea-una-funcion)
+  - [Tipos de Argumentos y Parametros](#tipos-de-argumentos-y-parametros)
+    - [Argumentos y Parametros Posicionales](#argumentos-y-parametros-posicionales)
+    - [Argumentos y Parametros Nominales](#argumentos-y-parametros-nominales)
+  - [Tipos de funciones por su notacion](#tipos-de-funciones-por-su-notacion)
+    - [Funcones como valor](#funcones-como-valor)
+    - [Funcion como declaracion](#funcion-como-declaracion)
 
 ## estructura de una funcion (como se crea una funcion)
 para crear una funcion debemos realizar los siguientes pasos.
@@ -81,3 +82,16 @@ registroAlumno("jory","rodriguez","todos los dias")
 ```
 > [!INFO]
 > Posicionales en orden y Nominales especificar el parametro y su valor
+## Tipos de funciones por su notacion
+### Funcones como valor
+en este caso se crea una funcion como se fuera un valor de un enlace.
+```js
+let saludo=function(){
+    console.log("bienvenido")
+}
+saludo()
+```
+en este caso el nombre de la funcion sera el nombre que le pongamos al enlace y para llamarlo o ejecutarlo debemos poner el nombre del enlace mas los parentesis. 
+al igual que una funcion clasica podemos tambien pasarle parametros.
+
+### Funcion como declaracion 
