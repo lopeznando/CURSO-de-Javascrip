@@ -1,6 +1,8 @@
 # FUNCIONES
 - [estructura de una funcion](#estructura-de-una-funcion-como-se-crea-una-funcion)
-- 
+- [Tipos de Argumentos y Parametros](#tipos-de-argumentos-y-parametros)
+- [Argumentos y Parametros Posicionales](#argumentos-y-parametros-nominales)
+- [Argumentos y Parametros Nominales](#argumentos-y-parametros-nominales)
  las funciones en javascript son `bloques de codigo ejecutable` a los que podemos pasar parametros y operar con ellos.
 Nos sirve para modular (modularizar) nuestro programa y estructurarlos en bloques que `realicen una tarea concreta`, de esta manera nuestro codigo es mas legible y mantenible.
 las funciones normalmente al acabar su ejecucion devuelven un valor, que conseguimos con el parametro `return`.
@@ -55,6 +57,27 @@ function enviarCorreo(){
 ## Tipos de Argumentos y Parametros
 es la manera como se remplaza los argumentos con los parametros
 ### Argumentos y Parametros Posicionales
-
+posicionales se le llama porque los argumentos tomaran los parametros en el orden que se le pase a la funcion, segun la posicion entre argumento y parametro.
+```js
+function sumaNumeros(a,b,c,d){
+    let suma=a+b+c+d
+    return suma
+}
+//argumentos posicionales
+let respuesta=sumaNumeros(2,4,6,8)
+console.log(repuesta)
+```
 ### Argumentos y Parametros Nominales
-
+se les conoce a los argumentos que en su creacion se asocian a un parametro en especifico.
+```js
+function registroAlumno(nombre,apellido,sexo){
+    let respuesta=`${nombre},${apellido},${sexo}`
+    return respuesta
+}
+//nominal
+registroAlumno(sexo="primo",nombre="edwin",apellido="del mar")
+//posicion
+registroAlumno("jory","rodriguez","todos los dias")
+```
+> [!INFO]
+> Posicionales en orden y Nominales especificar el parametro y su valor
