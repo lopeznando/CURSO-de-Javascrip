@@ -7,6 +7,10 @@
   - [Tipos de funciones por su notacion](#tipos-de-funciones-por-su-notacion)
     - [Funcones como valor](#funcones-como-valor)
     - [Funcion como declaracion](#funcion-como-declaracion)
+    - [Funcion de flecha (arrow function)](#funcion-de-flecha-arrow-function)
+    - [Diferencias](#diferencias)
+    - [binding](#binding)
+  - [la pila de llamadas](#la-pila-de-llamadas)
 
 ## estructura de una funcion (como se crea una funcion)
 para crear una funcion debemos realizar los siguientes pasos.
@@ -95,3 +99,84 @@ en este caso el nombre de la funcion sera el nombre que le pongamos al enlace y 
 al igual que una funcion clasica podemos tambien pasarle parametros.
 
 ### Funcion como declaracion 
+se le conoce como funcion declarativa a la manera clasica de como creamos un funcion.
+```js
+function saludo(){
+    return "saludo a todos"
+}
+console.log(saludo())
+```
+### Funcion de flecha (arrow function)
+esta funcion es introducida a partir de la version de ecma script 5 `es5`.
+se implemento para la creacion y ejecucion rapida  y mas entendible de las funciones.
+la funcion flecha evita la `vervosidad` en javascript.
+> [!NOTE]
+> `verbosidad` o `verboso` se utiliza en la programacion para referirse a un codigo que necesita demasiadas lineas de codigo o necesita cumplir estrictamente una seria de reglas podemos comparar la `verbosidad` a un texto demaciadp extenso o redundante.
+se crea de la misma manera que una funcion  como valor, eso quiere decir que la funcion flecha sera el valor de un enlace.
+la funcion flecha tiene la siguiente estructura.
+el parametro seguido del simbolo flecha `=>` y el cuerpo de ser necesario o solo de codigo que se retornara.
+```js
+function saludo(){
+    return "hola mundo"
+}
+console.log(saludo())
+
+let saludo=()=>("hola mundo")
+console.log(saludo())
+
+let mensaje=texto=>console.log("hola,",texto)
+console.log(mensaje("el primo"))
+//en el caso de tener mas de un parametro y ejecutar mas de una sola linea de codigo (posicional)
+let registroUsuario=(nombre,apellido)=>{
+    let alumno=`${nombre},${apellido}`
+    return alumno
+}
+console.log(registroUsuario("edwin","cachondo"))
+```
+### Diferencias
+las diferemnicas que tenemos al momento de crear una funcion declarativa, funcion como valor y flecha es el binding.
+### binding
+es una tecnica que guarda las funciones y variables (enlaces) solamente sube al principio la declaracion no el valor del archivo javascript.
+```js
+function saludo(){
+    return "hola primo"
+}
+function despedida(){
+    return "adios primo"
+}
+```
+```js
+saludo()
+edspedida()
+```
+## la pila de llamadas
+es una tecnica que se usa para controlar de manera crrecta la ejecucion de una funcion.
+**averiguar sobre LIFO**
+```js
+//programa que haga una ensalada
+function cortarTomate() {
+    console.log("cortando tomates")
+}
+function cortarLechuga() {
+    console.log("cortando lechuga")
+}
+function cortarPepino() {
+    console.log("cortando pepino")
+}
+function cortarLimon() {
+    console.log("cortando limon")
+}
+function preparaEnsalada() {
+    cortarTomate()
+    cortarLechuga()
+    cortarPepino()
+    cortarLimon()
+    console.log("mezclando las verduras")
+}
+function comer() {
+    preparaEnsalada()
+    console.log("comiendo la ensalada")
+}
+comer()
+```
+
