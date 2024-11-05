@@ -11,6 +11,7 @@
     - [Diferencias](#diferencias)
     - [binding](#binding)
   - [la pila de llamadas](#la-pila-de-llamadas)
+  - [CLOUSURE  o funciones de cierre(funciones que retorna funciones)](#clousure--o-funciones-de-cierrefunciones-que-retorna-funciones)
 
 ## estructura de una funcion (como se crea una funcion)
 para crear una funcion debemos realizar los siguientes pasos.
@@ -180,3 +181,26 @@ function comer() {
 comer()
 ```
 
+## CLOUSURE  o funciones de cierre(funciones que retorna funciones)
+un `CLOUSURE` es una funcion que encapsula una serie de variables y defiinciones locales que unicamente seran accesibles si son devueltas con el keyword `return`.
+antes de que aparesca la version `ecma script 6` los `clousure` eran un patrol creacional que nops permitira modularizar nuestro codigo, en lugar de usar las ○
+`clases`, que eran populares en otros lenguajes pero que javascript aun no lo implementaba.
+```js
+//una funcion retorna otra funcion(por lo genral es una funcion anonima)
+function retornaValor(n){
+    return n+1
+}
+//llamado a la funcion clasica
+retornaValor (10)
+
+//funcion clousure
+function retornaValor(n){
+    return function(){
+        return n+1
+    }
+}
+//llamado a la funcion closurure
+retornaValor(10)()
+```
+>[!NOTE]
+> las funciones `clousure` son usadas porque pueden mantener el valor de sus enlaces o variables locales en todo el proceso de la ejecucion de su funcion padre por cada llamda que se realice.
