@@ -204,3 +204,36 @@ retornaValor(10)()
 ```
 >[!NOTE]
 > las funciones `clousure` son usadas porque pueden mantener el valor de sus enlaces o variables locales en todo el proceso de la ejecucion de su funcion padre por cada llamda que se realice.
+### clousure Tipo Clase
+son funciones cuyo uso son iguales a las clases dentro de la ejecucion de una clase tenemos lo que se llama como `instancia` en
+java script tenemos funciones `clousure` que se oueden instanciar al igual que una clase , la direncia con las funciones `closure`
+clasicas es que en esta hacemos uso de la palabra reservada `keyword` llama `this`.
+```js 
+function contador(){
+    this.contador=0
+    this.incre=function(){
+        this.contador++
+    }
+    this.decre=function(){
+        this.contador--
+    }
+}
+//realizamos la instancia
+// let count1=new contador()
+// count1.contador
+// console.log(count1.contador)
+// count1.incre()
+// console.log(count1.contador)
+let count1=new contador()
+count1.conador
+for(let i=0;i<5;i++){
+    count.incre
+}
+```
+>[!NOTE]
+> la funcion clousure de tipo clase no hace uso de `return` en sus funciones al hacer uso de `this` cada funcion o variable estara enlazada al objeto que se cree.
+
+>[!WARNING]
+> el probema principal de este tipo de funcion, es que cuando creamos un nuevo objeto a partir de la funcion tipo clase, reservara espacio en la memoria para toda la clase y su valor creado eso quiere decir variable y funciones, cada vez que llamas a una funcion esta se replica en memoria.
+
+### prototype (Tarea- averiguar y sus ejemplos)
