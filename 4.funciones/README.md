@@ -12,6 +12,8 @@
     - [binding](#binding)
   - [la pila de llamadas](#la-pila-de-llamadas)
   - [CLOUSURE  o funciones de cierre(funciones que retorna funciones)](#clousure--o-funciones-de-cierrefunciones-que-retorna-funciones)
+    - [clousure Tipo Clase](#clousure-tipo-clase)
+    - [prototype (Tarea- averiguar y sus ejemplos)](#prototype-tarea--averiguar-y-sus-ejemplos)
 
 ## estructura de una funcion (como se crea una funcion)
 para crear una funcion debemos realizar los siguientes pasos.
@@ -237,3 +239,49 @@ for(let i=0;i<5;i++){
 > el probema principal de este tipo de funcion, es que cuando creamos un nuevo objeto a partir de la funcion tipo clase, reservara espacio en la memoria para toda la clase y su valor creado eso quiere decir variable y funciones, cada vez que llamas a una funcion esta se replica en memoria.
 
 ### prototype (Tarea- averiguar y sus ejemplos)
+
+En el contexto de closures en JavaScript, el término prototype no está relacionado de manera directa, pero es posible combinar ambos conceptos. Sin embargo, para aclarar la pregunta, primero explicaré brevemente qué es un closure y luego cómo se podría aplicar prototype dentro de ese contexto.
+
+¿Qué es el Prototype en este contexto?
+Cuando hablamos de prototype en el contexto de closures, podemos pensar en cómo una función, que puede ser utilizada como un "constructor" para crear objetos, puede aprovechar el prototipo para compartir métodos y propiedades entre las instancias de los objetos creados con dicha función. Los closures pueden estar involucrados en las funciones constructoras si necesitamos preservar algún estado privado mientras se usan métodos del prototipo.
+
+Ejemplo de Prototype con Closure en JavaScript
+Imaginemos que tenemos una función constructora que usa un closure para mantener un valor privado, mientras que los métodos que operan sobre ese valor se agregan al prototipo de la función constructora. Así, cada instancia puede compartir los mismos métodos, pero el valor privado es único para cada instancia.
+
+```js
+// Función constructora
+function CuentaBancaria(saldoInicial) {
+  // Variable privada usando closure
+  let saldo = saldoInicial;
+
+  // Método público que permite acceder al saldo privado
+  this.obtenerSaldo = function() {
+    return saldo;
+  };
+}
+
+// Añadimos un método al prototype de CuentaBancaria
+CuentaBancaria.prototype.depositar = function(monto) {
+  saldo += monto;
+  console.log(`Deposito de $${monto}. Nuevo saldo: $${saldo}`);
+};
+
+CuentaBancaria.prototype.retirar = function(monto) {
+  if (monto <= saldo) {
+    saldo -= monto;
+    console.log(`Retiro de $${monto}. Nuevo saldo: $${saldo}`);
+  } else {
+    console.log("Saldo insuficiente.");
+  }
+};
+
+// Creamos una nueva instancia
+const cuenta1 = new CuentaBancaria(1000);
+console.log(cuenta1.obtenerSaldo()); // 1000
+
+cuenta1.depositar(500); // Deposito de $500. Nuevo saldo: $1500
+console.log(cuenta1.obtenerSaldo()); // 1500
+
+cuenta1.retirar(200); // Retiro de $200. Nuevo saldo: $1300
+console.log(cuenta1.obtenerSaldo()); // 1300
+```
