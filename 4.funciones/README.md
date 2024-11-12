@@ -15,7 +15,9 @@
     - [clousure Tipo Clase](#clousure-tipo-clase)
     - [prototype (Tarea- averiguar y sus ejemplos)](#prototype-tarea--averiguar-y-sus-ejemplos)
   - [RECURSION EN FUNCIONES (tareas)](#recursion-en-funciones-tareas)
+    - [Características principales de la recursión:](#características-principales-de-la-recursión)
   - [FUNCIONES CALLBACK (tareas)](#funciones-callback-tareas)
+    - [Características clave de una función callback:](#características-clave-de-una-función-callback)
 - [CLASES](#clases)
   - [Estructura de una clase en JavaScript](#estructura-de-una-clase-en-javascript)
 
@@ -291,7 +293,65 @@ console.log(cuenta1.obtenerSaldo()); // 1300
 ```
 
 ## RECURSION EN FUNCIONES (tareas)
+**¿Qué es la recursión en funciones?**
+
+La recursión es un concepto en programación donde una función se llama a sí misma para resolver un problema. Una función recursiva puede dividir un problema grande en subproblemas más pequeños y resolverlos repetidamente hasta llegar a una solución final.
+
+### Características principales de la recursión:
+`Llamada a sí misma:` Una función recursiva se llama a sí misma dentro de su propio cuerpo para resolver `subproblemas` más pequeños.
+`Caso base:` Toda función recursiva debe tener al menos un caso base. Este es el caso en el que la función deja de llamarse a sí misma y devuelve un resultado directamente, ivitando llamadas infinitas.
+
+`División del problema:` La función generalmente divide el problema en partes más pequeñas (subproblemas) que se resuelven recursivamente.
+
+Estructura general de una función recursiva:
+Caso base: Condición que termina la recursión. Esto evita que la función se llame infinitamente.
+
+`Llamada recursiva:` La función se llama a sí misma con un nuevo valor, generalmente reducido o modificado, que eventualmente llevará al caso base.
+
+`Ejemplo simple:` Factorial de un número
+Uno de los ejemplos más comunes de recursión es el cálculo del factorial de un número. El factorial de un número n se define como el producto de todos los números desde 1 hasta 
+```js
+n:
+n! = n * (n-1) * (n-2) * ... * 1
+También se puede definir recursivamente como:
+n! = n * (n-1)!
+Caso base: 0! = 1 (el factorial de cero es 1).
+```
 ## FUNCIONES CALLBACK (tareas)
+
+**¿Qué es una función Callback?**
+
+Una función callback es una función que se pasa como argumento a otra función y que luego se ejecuta (o "llama") en algún punto dentro de esa función. El término `"callback"` se refiere a la idea de que la función proporcionada se "llama de vuelta" cuando se alcanza una condición específica dentro de la función que la recibió.
+
+En resumen, una función callback es una función que se ejecuta después de que otra función haya terminado de ejecutarse. En JavaScript, las funciones callbacks se utilizan a menudo para manejar operaciones asincrónicas, como solicitudes a servidores, temporizadores, o manipulación de eventos.
+
+### Características clave de una función callback:
+
+Paso como argumento: Una función callback se pasa como un argumento a otra función.
+Ejecución posterior: La función callback se ejecuta más tarde, es decir, después de que se haya completado alguna tarea dentro de la función que la recibió.
+
+*Generalmente asincrónica:*  Las callbacks se usan mucho en operaciones asincrónicas como lecturas de archivos, respuestas HTTP, o eventos de la interfaz de usuario, donde se quiere que una función se ejecute después de que se complete alguna tarea.
+
+**Ejemplo simple de función callback:**
+
+Supongamos que tienes una función saludar que toma otra función como argumento y la llama después de imprimir un saludo. Esta segunda función sería el `callback.`
+```js
+// Definimos una función callback
+function saludo(nombre) {
+    console.log(`Hola, ${nombre}!`);
+}
+
+// Función que acepta una función callback como argumento
+function hacerAlgo(funcionCallback) {
+    console.log("Haciendo algo...");
+    // Llamamos a la función callback después de realizar la acción
+    funcionCallback("Juan");
+}
+
+// Llamamos a la función `hacerAlgo`, pasándole la función `saludo` como callback
+hacerAlgo(saludo);
+
+```
 # CLASES 
 Las clases en javascript llegan en la version `ECMAScript6`, javascript no tenia al igual que en otros lenguajes de programacion orientadas a objetos las `clases` ya que javascript se enfocaba en la `programacion funcional` sin embargo con la llegada de `ES6` adopta ser un lenguaje de programacion multiparadigma, entre ellos la `programacion orientada de objetos` con la llegada de las `clases`.
 ## Estructura de una clase en JavaScript
