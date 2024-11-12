@@ -14,6 +14,10 @@
   - [CLOUSURE  o funciones de cierre(funciones que retorna funciones)](#clousure--o-funciones-de-cierrefunciones-que-retorna-funciones)
     - [clousure Tipo Clase](#clousure-tipo-clase)
     - [prototype (Tarea- averiguar y sus ejemplos)](#prototype-tarea--averiguar-y-sus-ejemplos)
+  - [RECURSION EN FUNCIONES (tareas)](#recursion-en-funciones-tareas)
+  - [FUNCIONES CALLBACK (tareas)](#funciones-callback-tareas)
+- [CLASES](#clases)
+  - [Estructura de una clase en JavaScript](#estructura-de-una-clase-en-javascript)
 
 ## estructura de una funcion (como se crea una funcion)
 para crear una funcion debemos realizar los siguientes pasos.
@@ -285,3 +289,41 @@ console.log(cuenta1.obtenerSaldo()); // 1500
 cuenta1.retirar(200); // Retiro de $200. Nuevo saldo: $1300
 console.log(cuenta1.obtenerSaldo()); // 1300
 ```
+
+## RECURSION EN FUNCIONES (tareas)
+## FUNCIONES CALLBACK (tareas)
+# CLASES 
+Las clases en javascript llegan en la version `ECMAScript6`, javascript no tenia al igual que en otros lenguajes de programacion orientadas a objetos las `clases` ya que javascript se enfocaba en la `programacion funcional` sin embargo con la llegada de `ES6` adopta ser un lenguaje de programacion multiparadigma, entre ellos la `programacion orientada de objetos` con la llegada de las `clases`.
+## Estructura de una clase en JavaScript
+Una clase esta separada en tres grandes secciones.
+1. El nombre de la clase que debera ser en `sigular y PascalCase`.
+2. Debera tener atributos (valor, variable) estos deberan ser `sustantivos` y estar escrito en `CamelCase`.
+3. Debera tener metodos (acciones, funciones) estos deberan ser verbos u estar escritos en `CamelCase`.
+```js
+class Computadora{
+    //atributos
+    constructor(marca){
+        this.marca="marca"
+        this.color=""
+        this.tipoCase="tower"
+    }
+    //metodos
+    encender(){
+        return "estoy encendiendo..."
+    },
+    apagar(){
+        return "estoy cerrando cesion..."
+    },
+    escribir(){
+        return "estoy haciendo un informe"
+    }
+    jugar(){
+        return "estoy jugando"
+    }
+}
+//instanciar
+let miPC=new Computadora(gigabyte)
+miPC.endender()
+
+```
+ 

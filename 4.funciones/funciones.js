@@ -70,17 +70,46 @@
 //     count2.decre()
 // }
 // count2.valueCount()
-function contador(){
-    this.contador=0
-    this.incre=function(){
-        this.contador++
-    }
-    this.decre=function(){
-        this.contador--
-    }
+// function contador(){
+//     this.contador=0
+//     this.incre=function(){
+//         this.contador++
+//     }
+//     this.decre=function(){
+//         this.contador--
+//     }
+// }
+// //realizamos la instancia
+// let count1=new contador()
+// console.log(count1.contador)
+// count1.incre()
+// console.log(count1.contador)
+
+function Contador(nombre){
+    this.count=0
+    this.nombre=nombre
 }
-//realizamos la instancia
-let count1=new contador()
-console.log(count1.contador)
-count1.incre()
-console.log(count1.contador)
+Contador.prototype={
+    incremento:function(){
+        this.count++
+        }, 
+    decremento:function(){
+        this.count--
+        },
+    actualizarNombre:function(nuevoNombre){
+            this.nombre=nuevoNombre
+        },
+    mostrarDatos:function(){
+        return `${this.count}, ${this.nombre}`
+        }
+    
+}
+//instaciar  la funcion
+let contadorUno=new Contador("el primo")
+console.log(contadorUno.mostrarDatos())
+contadorUno.incremento()
+contadorUno.incremento()
+console.log(contadorUno.mostrarDatos())
+contadorUno.incremento()
+contadorUno.actualizarNombre("Feli")
+console.log(contadorUno.mostrarDatos())
