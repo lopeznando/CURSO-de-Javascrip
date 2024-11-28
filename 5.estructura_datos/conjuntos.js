@@ -76,3 +76,31 @@ let listaDePalabras = ["una", "ella", "para", "mama", "papa"];
 let cantidadDeA = contarVocalA(listaDePalabras);
 
 console.log("Cantidad de vocales 'a' en la lista:", cantidadDeA);
+
+//crear una funcion que me genere un objeto de caracteristicas tecnicas de una computadora, el objeto
+//debera tener como minimo los siguientes valores.
+//marca, modelo, procesador, ram, disco y tarjeta de video
+function crearComputadora(marca, modelo, procesador, ram, disco, tarjetaDeVideo) {
+    return {
+      marca: marca,
+      modelo: modelo,
+      procesador: procesador,
+      ram: ram,
+      disco: disco,
+      tarjetaDeVideo: tarjetaDeVideo
+    };
+  }
+  
+  const computadora1 = crearComputadora("intel", "XPS 15", "Intel i7", "16GB", "512GB SSD", "NVIDIA GTX 1650");
+  console.log(computadora1);
+  console.log(Computadora)
+// en este caso la clave marca existe en mi objeto por lo tanto su valor sera actualizado
+miComputadora["marca"]="intel"
+console.log(miComputadora)
+//en este caso la clave teclado no existe en mi objeto por lo tanto se crear un nuevo elemento con la clave teclado y su valor logitec
+miComputadora["Teclado"]="Logitec"
+console.log(miComputadora)
+//averiguar como eliminar un elemento de un objeto
+// En JavaScript, puedes eliminar un elemento de un objeto usando el operador delete. Este operador elimina la propiedad especificada de un objeto.
+  
+  
